@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap');
+
+body {
+   font-family: 'Open Sans', sans-serif;
+   margin:0;
+   background-color: #F7F7F7;
+}
+
+.container {
+    max-width: 900px;
+    margin:auto;
+}
+
+.header--area {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #EBEBEB;
+
+    
+}
+.tgl--buttom {
+    top: 15px;
+    left: 141px;
+    width: 86px;
+    height: 53px;
+    border: 1px solid #EBEBEB;
+
+    font: italic normal bold 44px/70px Helvetica ;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    text-align: center;
+}
+.buttons {
+    height: 24px;
+    text-align: center;
+    font: italic normal bold 20px/70px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    border: 1px solid #EBEBEB;
+}
+.banner {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.banner h1{
+    font: italic normal bold 20px/70px Helvetica;
+    color: #707070;
+}
+.banner span{
+    font: italic normal bold 17px/24px Helvetica;
+    color: #707070;
+}
+
+#apostaName {
+    font: italic normal bold 24px/85px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    text-transform: uppercase;
+}
+#apostaName1 {
+    font-size: 20px;
+    font: italic normal 300 24px/85px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    text-transform: uppercase;
+    color: #707070;
+}
+.cart {
+    margin-top: 60px;
+    min-width: 317px;
+    height: 484px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.containerNumber {
+
+}
+.numbers {
+    border-radius: 50%;
+    margin: 5px;
+    width: 63px;
+    height: 65px;
+    background: #ADC0C4 ;
+    opacity: 1;
+    border-color: #FFFFFF;
+}
+
+
+.numbersLetra {
+    left: 151px;
+    width: 22px;
+    height: 24px;
+    text-align: left;
+    font: normal normal bold 20px/24px Helvetica;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+
+.lotofacil {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 34px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #7F3992;
+    border-radius: 100px;
+    opacity: 1;
+}
+.lotofacil span {
+    color: #7F3992;
+    
+}
+
+.mega-sena {
+    top: 253px;
+    left: 268px;
+    width: 113px;
+    height: 34px;
+    background: #01AC66 0% 0% no-repeat padding-box;
+    border: 2px solid #01AC66;
+    border-radius: 100px;
+    opacity: 1;
+}
+.mega-sena span {
+    color: #FFFFFF;
+}
+
+.complete-game {
+        top: 775px;
+    left: 130px;
+    width: 164px;
+    height: 52px;
+
+    border: 1px solid #27C383;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.complete-game span{
+    text-align: left;
+    font: normal normal medium 16px/24px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #27C383;
+    opacity: 1;
+
+}
+
+.clear-game {
+    top: 775px;
+    left: 130px;
+    width: 164px;
+    height: 52px;
+
+    border: 1px solid #27C383;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.clear-game span{
+    text-align: left;
+    font: normal normal medium 16px/24px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #27C383;
+    opacity: 1;
+
+}
+
+.add-cart {
+    top: 775px;
+    left: 596px;
+    width: 209px;
+    height: 52px;
+    background: #27C383 0% 0% no-repeat padding-box;
+    border: 1px solid #27C383;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.add-cart span{
+    text-align: left;
+    font: normal normal bold 16px/24px Helvetica;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+
+}
+
+
+.lotomania {
+    top: 253px;
+    left: 401px;
+    width: 113px;
+    height: 34px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #F79C31;
+    border-radius: 100px;
+    opacity: 1;
+}
+.lotomania span {
+    color: #F79C31;
+}
+
+.models {
+    display: none;
+}
+.lotoButton {
+    top: 253px;
+    left: 401px;
+    width: 113px;
+    height: 34px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #F79C31;
+    border-radius: 100px;
+    opacity: 1;
+}
+
+.button-area {
+    display: flex;
+}
+
+.number-body {
+    width: 113px;
+    height: 34px;
+    background: #000 0% 0% no-repeat padding-box;
+ display: none;
+}
