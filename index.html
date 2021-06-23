@@ -1,98 +1,80 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOTTERY</title>
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loterias</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-    <header>
-        <div class="container header--area">
-            <div class="header--left">
-                <button class="tgl--buttom">TGL</button>
-                <button class="buttons">Home</button>
-            </div>
-            <div class="header--right">
-                <button class="buttons">Account</button>
-                <button class="buttons">Log out</button>
-            </div>
+  <div class="container">
+    <div class="header">
+      <div class="header-title">
+        <div class="logo">
+          <h1>TGL</h1>
+          <div class="header-line"></div>
         </div>
-    </header>
+        <a class="header-button-home" href="/">Home</a>
+      </div>
 
-    <section class="container banner">
+      <div class="header-left">
+        <a href="/">Account</a>
+       <a href="/">Log out<img class="header-icon" src="assets/arrow.svg" /></a>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="bet-container">
+        <div class="title" data-js="new-bet-title">
+          <h2 class="h2-game-name"><strong>NEW BET </strong>FOR<span data-js="game-name"></span></h2>
+        </div>
+
+        <h2 class="title-infor">choose a game</h2>
+        <div class="choose-game-buttons" data-js="choose-game-buttons"></div>
+
+        <h2 class="title-infor">Fill your bet</h2>
+        <p class="bet-description" data-js="bet-description"></p>
+
+        <div class="numbers" data-js="numbers"></div>
+
+        <div class="game-buttons">
+          <div>
+            <button class="button" data-js="complete-game-numbers">Complete game</button>
+            <button class="button" data-js="clear-selected-numbers">Clear game</button>
+          </div>
+          <div>
+            <button class="add-to-cart-button" data-js="add-to-cart-button">
+              <img src="assets/cart.svg">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-container">
+        <div class="cart-container-two">
+          <h2>CART</h2>
+          <div class="container-cart" data-js="bets">
+          </div>
+          <div class="value">
+            <h2 class="value-cart">
+              <strong>CART </strong>TOTAL : R$
+              <span data-js="total-value">0,00</span>
+            </h2>
+          </div>
+        </div>
         <div>
-            <div class='apostaName'>
-                <span class="testeName">NOVA APOSTA PARA <span id="apostaName1" class="testeName2"></span></span>
-
-            </div>
-
-            <span><br />Escolha um jogo</span>
-
-            <div class="models">
-                <div class="loto-box">
-                    <button class="lotoButton">
-                        <span class="lotoText"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="numbers" >
-                <a  ></a>
-
-            </div>
-
-
-            <div class="button-area"> </div>
-
-            <div class="number-area">
-                <div class="number-body">
-
-
-                </div>
-            </div>
-
-            <div class="descricao">
-                <span> </span>
-            </div>
-
-
-
-            <div class="containerNumber" id="numberss">
-
-            </div>
-
-            <button class="complete-game">
-                <span>
-                    Completar jogo
-                </span>
-            </button>
-            <button class="clear-game">
-                <span>
-                    Limpar jogo
-                </span>
-            </button>
-            <button class="add-cart">
-                <span>
-                    Adicionar ao Carrinho
-                </span>
-            </button>
+          <button class="save-button" data-js="save-button">
+            Save
+            <img src="assets/arrowGreen.svg">
+          </button>
         </div>
-        <div class="cart">
-
-        </div>
-    </section>
-
-    <script type="text/javascript" src="script.js">
-
-    </script>
-
-
-
-
+      </div>
+    </div>
+    <footer>
+      <span>Copyright 2020 Luby Software</span>
+    </footer>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>

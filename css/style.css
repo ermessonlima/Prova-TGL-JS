@@ -1,236 +1,370 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap');
 
-body {
-   font-family: 'Open Sans', sans-serif;
-   margin:0;
-   background-color: #F7F7F7;
-}
 
-.container {
-    max-width: 900px;
-    margin:auto;
-}
 
-.header--area {
+/** global **/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: #F7F7F7 0% 0% no-repeat padding-box;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .container {
+    width: 1140px;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  
+  .main-content {
     display: flex;
     justify-content: space-between;
-    height: 60px;
-    background-color: #F7F7F7;
-    border-bottom: 1px solid #EBEBEB;
+  }
+  
 
-    
-}
-.tgl--buttom {
-    top: 15px;
-    left: 141px;
-    width: 86px;
-    height: 53px;
-    border: 1px solid #EBEBEB;
 
-    font: italic normal bold 44px/70px Helvetica ;
-    letter-spacing: 0px;
-    color: #707070;
-    opacity: 1;
-    text-align: center;
-}
-.buttons {
-    height: 24px;
-    text-align: center;
-    font: italic normal bold 20px/70px Helvetica;
-    letter-spacing: 0px;
-    color: #707070;
-    opacity: 1;
-    border: 1px solid #EBEBEB;
-}
-.banner {
-    color: #fff;
+/** header **/
+
+.header {
     display: flex;
     justify-content: space-between;
-}
-.banner h1{
-    font: italic normal bold 20px/70px Helvetica;
+    height: 70;
+    font-weight: bold;
     color: #707070;
-}
-.banner span{
-    font: italic normal bold 17px/24px Helvetica;
+  }
+  
+  .header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .header-line {
+    height: 6px;
+    width: 110px;
+    border-radius: 3px;
+    background-color: #B5C401;
+  }
+  
+  .header-button-home {
     color: #707070;
-}
-
-#apostaName {
-    font: italic normal bold 24px/85px Helvetica;
-    letter-spacing: 0px;
-    color: #707070;
-    text-transform: uppercase;
-}
-#apostaName1 {
+    text-decoration: none;
     font-size: 20px;
-    font: italic normal 300 24px/85px Helvetica;
-    letter-spacing: 0px;
+    margin-left: 70px;
+  }
+  
+  .header-left {
+    display: flex;
+    align-content: space-between;
+    list-style: none;
+    
+  }
+  
+  .header-left  a {
     color: #707070;
-    text-transform: uppercase;
-    color: #707070;
-}
-.cart {
-    margin-top: 60px;
-    min-width: 317px;
-    height: 484px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 40px; 
+    line-height: 70px;
+  }
+  
+  .header-icon {
+    padding-left: 5px;
+    vertical-align: middle;
+  
+  }
+
+  .log-out-button {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  .header {
+    border-bottom: 2px solid #EBEBEB;
+  }
+  
+
+
+
+
+/** apostas **/
+
+  .bet-container {
+    width: 780px;
+    height: 100%;
+    position: relative;
+  }
+  
+  h2 {
+  color: #707070;
+  }
+  
+  .title-infor {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .title {
+    display: flex;
+    font-size: 18px;
+    margin-top: 76px;
+    margin-bottom: 30px;
+  }
+  
+  .for-game-name {
+    font-weight: 400;
+  }
+  
+  .h2-game-name {
+    font-weight: 400;
+  }
+  
+  .choose-game-buttons {
+    display: flex;
+  }
+  
+  .game-button {
+    width: 120px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 18px;
+    margin-right: 10px;
+    background-color: #FFFFFF;
+  
+    transition: filter 0.2s;
+  }
+  
+  .game-button:hover {
+    filter: brightness(0.9);
+  }
+  
+  .bet-description {
+    color: #868686;
+    font-size: 18px;
+  }
+  
+  .number {
+    background-color: #ADC0C4;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 32px;
+    margin-right: 4px;
+    margin-bottom: 16px;
+    width: 64px;
+    height:64px;
+  
+    transition: filter 0.2s;
+  }
+  
+  .number:hover {
+    filter: brightness(0.9);
+  }
+  
+  .numbers {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    margin: 40px 0;
+  }
+  
+  .game-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button {
+    background-color: transparent;
+    color: #27C383;
+    border: 2px solid #27C383;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-style: normal;
+  
+    transition: filter 0.2s;
+  }
+  
+  .button:hover {
+    filter: brightness(0.9);
+  }
+  
+  .add-to-cart-button {
+    background-color: #27C383;
+    color: #FFFFFF;
+    border: 2px solid #27C383;
+    padding: 16px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-right: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+  
+    transition: filter 0.2s;
+  }
+  
+  .add-to-cart-button:hover {
+    filter: brightness(0.9);
+  }
+  
+  .add-to-cart-button img {
+    margin-right: 16px;
+  }
+
+  
+
+/** cart **/
+
+
+  .cart-container {
+    width: 320px;
+    height: 100%;
+    margin-top: 58px;
     border: 1px solid #E2E2E2;
     border-radius: 10px;
-    opacity: 1;
-}
-
-.containerNumber {
-
-}
-.numbers {
-    border-radius: 50%;
-    margin: 5px;
-    width: 63px;
-    height: 65px;
-    background: #ADC0C4 ;
-    opacity: 1;
-    border-color: #FFFFFF;
-}
-
-
-.numbersLetra {
-    left: 151px;
-    width: 22px;
-    height: 24px;
-    text-align: left;
-    font: normal normal bold 20px/24px Helvetica;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-
-.lotofacil {
-    top: 253px;
-    left: 130px;
-    width: 113px;
-    height: 34px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 2px solid #7F3992;
-    border-radius: 100px;
-    opacity: 1;
-}
-.lotofacil span {
-    color: #7F3992;
-    
-}
-
-.mega-sena {
-    top: 253px;
-    left: 268px;
-    width: 113px;
-    height: 34px;
-    background: #01AC66 0% 0% no-repeat padding-box;
-    border: 2px solid #01AC66;
-    border-radius: 100px;
-    opacity: 1;
-}
-.mega-sena span {
-    color: #FFFFFF;
-}
-
-.complete-game {
-        top: 775px;
-    left: 130px;
-    width: 164px;
-    height: 52px;
-
-    border: 1px solid #27C383;
-    border-radius: 10px;
-    opacity: 1;
-}
-
-.complete-game span{
-    text-align: left;
-    font: normal normal medium 16px/24px Helvetica Neue;
-    letter-spacing: 0px;
-    color: #27C383;
-    opacity: 1;
-
-}
-
-.clear-game {
-    top: 775px;
-    left: 130px;
-    width: 164px;
-    height: 52px;
-
-    border: 1px solid #27C383;
-    border-radius: 10px;
-    opacity: 1;
-}
-
-.clear-game span{
-    text-align: left;
-    font: normal normal medium 16px/24px Helvetica Neue;
-    letter-spacing: 0px;
-    color: #27C383;
-    opacity: 1;
-
-}
-
-.add-cart {
-    top: 775px;
-    left: 596px;
-    width: 209px;
-    height: 52px;
-    background: #27C383 0% 0% no-repeat padding-box;
-    border: 1px solid #27C383;
-    border-radius: 10px;
-    opacity: 1;
-}
-
-.add-cart span{
-    text-align: left;
-    font: normal normal bold 16px/24px Helvetica;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-
-}
-
-
-.lotomania {
-    top: 253px;
-    left: 401px;
-    width: 113px;
-    height: 34px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 2px solid #F79C31;
-    border-radius: 100px;
-    opacity: 1;
-}
-.lotomania span {
-    color: #F79C31;
-}
-
-.models {
-    display: none;
-}
-.lotoButton {
-    top: 253px;
-    left: 401px;
-    width: 113px;
-    height: 34px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 2px solid #F79C31;
-    border-radius: 100px;
-    opacity: 1;
-}
-
-.button-area {
+   
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+  }
+  
+  .cart-container-two {
+    background-color: #FFFFFF;
+    
+  }
+
+
+
+  .cart-container h2 {
+    margin: 20px 0 20px 14px;
+    font-size: 24px;
+  }
+  
+  .cart-container .value {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cart-container .value .value-cart {
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 14px;
+  }
+  
+  .cart-container .value .total-value {
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 0;
+  }
+  .container-cart {
+    background-color: #FFFFFF;
+  }
+  
+  .save-button {
+    width: 320px;
+    height: 80px;
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    color: #27C383;
+    background-color: transparent;
+  }
+  
+  
+  .bet-card {
+    margin: 0 auto;
+    width: 300px;
+    height: 70px;
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .bet-card img {
+    display: inline-block;
+    width: 32px;
+    margin: 8px;
+    cursor: pointer;
+  }
+  
+  .bet-cart-numbers {
+    color: #868686;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  
+  .bet-price {
+    color: #868686;
+    font-style: normal;
+  }
+  
+  .bet-name {
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .bet-interior {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  
+  .bet-name-price {
+    display: flex;
+    justify-content: left;
+  }
+  
+/** Footer **/
+
+footer {
+  display: flex;
+  justify-content: center;
+
+  height: 50px;
+  width: 100%;
+
+  margin-top: 110px;
+
+  position: relative;
+
+  border-top: 2px solid #EBEBEB;
 }
 
-.number-body {
-    width: 113px;
-    height: 34px;
-    background: #000 0% 0% no-repeat padding-box;
- display: none;
+footer span {
+  font-size: 16px;
+  font-style: normal;
+  color: #707070;
+  margin-top: 12px;
 }
