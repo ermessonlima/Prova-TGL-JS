@@ -14,7 +14,7 @@
   
   body {
     height: 100vh;
-    background-color: #F7F7F7 0% 0% no-repeat padding-box;
+    background-color: #F7F7F7;
   }
   
   button {
@@ -131,19 +131,17 @@
     margin-bottom: 30px;
   }
   
-  .for-game-name {
+
+  
+  .type {
     font-weight: 400;
   }
   
-  .h2-game-name {
-    font-weight: 400;
-  }
-  
-  .choose-game-buttons {
+  .typeButton {
     display: flex;
   }
   
-  .game-button {
+  .bet-button {
     width: 120px;
     height: 36px;
     font-size: 16px;
@@ -155,11 +153,11 @@
     transition: filter 0.2s;
   }
   
-  .game-button:hover {
+  .bet-button:hover {
     filter: brightness(0.9);
   }
   
-  .bet-description {
+  .description {
     color: #868686;
     font-size: 18px;
   }
@@ -189,7 +187,7 @@
     margin: 40px 0;
   }
   
-  .game-buttons {
+  .bet-buttons {
     display: flex;
     justify-content: space-between;
   }
@@ -240,23 +238,19 @@
 /** cart **/
 
 
-  .cart-container {
-    width: 320px;
-    height: 100%;
-    margin-top: 58px;
-    border: 1px solid #E2E2E2;
-    border-radius: 10px;
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-  }
+.cart-container {
+  width: 320px;
+  height: 100%;
+  margin-top: 58px;
+  border: 1px solid #E2E2E2;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
   
-  .cart-container-two {
-    background-color: #FFFFFF;
-    
-  }
+
 
 
 
@@ -294,7 +288,7 @@
     font-size: 32px;
     font-weight: bold;
     color: #27C383;
-    background-color: transparent;
+    background-color:  #F4F4F4 0% 0% no-repeat padding-box;
   }
   
   
