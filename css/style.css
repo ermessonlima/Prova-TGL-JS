@@ -15,6 +15,7 @@
   body {
     height: 100vh;
     background-color: #F7F7F7;
+
   }
   
   button {
@@ -32,7 +33,24 @@
     justify-content: space-between;
   }
   
+  .modal-container {
+    position: absolute;
+    z-index: 5;
+    height: 100vh;
+    width:100%;
+    display: none;
+    background-color: none;
+    justify-content:center;
+    align-items:center;
+  }
 
+
+  .modal-alert {
+    height: 500px;
+    width: 800px;
+    border-radius:20px;
+    background-color: #000;
+  }
 
 /** header **/
 
@@ -209,7 +227,7 @@
     filter: brightness(0.9);
   }
   
-  .add-to-cart-button {
+  .cartButton {
     background-color: #27C383;
     color: #FFFFFF;
     border: 2px solid #27C383;
@@ -225,18 +243,15 @@
     transition: filter 0.2s;
   }
   
-  .add-to-cart-button:hover {
+  .cartButton:hover {
     filter: brightness(0.9);
   }
   
-  .add-to-cart-button img {
+  .cartButton img {
     margin-right: 16px;
   }
 
-  
-
 /** cart **/
-
 
 .cart-container {
   width: 320px;
@@ -272,7 +287,7 @@
     margin-left: 14px;
   }
   
-  .cart-container .value .total-value {
+  .cart-container .value .totalCart {
     font-style: normal;
     font-weight: normal;
     margin-left: 0;
@@ -281,7 +296,7 @@
     background-color: #FFFFFF;
   }
   
-  .save-button {
+  .saveButton {
     width: 320px;
     height: 80px;
     border: none;

@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="modal-container">
+    <div class="modal-alert">
+
+    </div>
+  </div>
+
   <div class="container">
     <div class="header">
       <div class="header-title">
@@ -41,11 +47,11 @@
 
         <div class="bet-buttons">
           <div>
-            <button class="button" data-js="complete-game-numbers">Complete game</button>
-            <button class="button" data-js="clear-selected-numbers">Clear game</button>
+            <button class="button" data-js="completeNumber">Complete game</button>
+            <button class="button" data-js="cleanNumbers">Clear game</button>
           </div>
           <div>
-            <button class="add-to-cart-button" data-js="add-to-cart-button">
+            <button class="cartButton" data-js="cartButton">
               <img src="assets/cart.svg">
               Add to cart
             </button>
@@ -55,17 +61,17 @@
       <div class="cart-container">
         <div class="cart-container-two">
           <h2>CART</h2>
-          <div class="container-cart" data-js="bets">
+          <div class="container-cart" data-js="numbersLottery">
           </div>
           <div class="value">
             <h2 class="value-cart">
               <strong>CART </strong>TOTAL : R$
-              <span data-js="total-value">0,00</span>
+              <span data-js="totalCart">0,00</span>
             </h2>
           </div>
         </div>
         <div>
-          <button class="save-button" data-js="save-button">
+          <button class="saveButton" data-js="saveButton">
             Save
             <img src="assets/arrowGreen.svg">
           </button>
