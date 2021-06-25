@@ -1,21 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap');
 
-
-
 /** global **/
-
 * {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
-    font-style: italic;
   }
   
   body {
     height: 100vh;
     background-color: #F7F7F7;
-
   }
   
   button {
@@ -23,9 +19,9 @@
   }
   
   .container {
-    width: 1140px;
-    height: 100vh;
+    width: 1200px;
     margin: 0 auto;
+    height: 100vh;
   }
   
   .main-content {
@@ -44,7 +40,6 @@
     align-items:center;
   }
 
-
   .modal-alert {
     height: 500px;
     width: 800px;
@@ -53,54 +48,54 @@
   }
 
 /** header **/
-
 .header {
-    display: flex;
-    justify-content: space-between;
     height: 70;
     font-weight: bold;
     color: #707070;
+    display: flex;
+    justify-content: space-between;
   }
   
   .header-title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 20px;
+  }
+  .header-left {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
-  h1 {
-    font-size: 48px;
-    margin: 0;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
   .header-line {
-    height: 6px;
     width: 110px;
     border-radius: 3px;
+    height: 6px;
     background-color: #B5C401;
   }
   
   .header-button-home {
-    color: #707070;
     text-decoration: none;
     font-size: 20px;
+    color: #707070;
     margin-left: 70px;
   }
   
-  .header-left {
-    display: flex;
-    align-content: space-between;
-    list-style: none;
-    
+  .header {
+    border-bottom: 2px solid #EBEBEB;
   }
   
   .header-left  a {
-    color: #707070;
-    text-decoration: none;
     font-size: 20px;
     margin-left: 40px; 
+    color: #707070;
+    text-decoration: none;
     line-height: 70px;
   }
   
@@ -110,25 +105,10 @@
   
   }
 
-  .log-out-button {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  
-  .header {
-    border-bottom: 2px solid #EBEBEB;
-  }
-  
-
-
-
-
 /** apostas **/
-
-  .bet-container {
-    width: 780px;
+  .lottery-container {
     height: 100%;
+    width: 780px;
     position: relative;
   }
   
@@ -149,8 +129,6 @@
     margin-bottom: 30px;
   }
   
-
-  
   .type {
     font-weight: 400;
   }
@@ -159,7 +137,7 @@
     display: flex;
   }
   
-  .bet-button {
+  .lottery-buttons {
     width: 120px;
     height: 36px;
     font-size: 16px;
@@ -171,7 +149,7 @@
     transition: filter 0.2s;
   }
   
-  .bet-button:hover {
+  .lottery-buttons:hover {
     filter: brightness(0.9);
   }
   
@@ -181,17 +159,16 @@
   }
   
   .number {
-    background-color: #ADC0C4;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: bold;
-    border: none;
     border-radius: 32px;
     margin-right: 4px;
     margin-bottom: 16px;
     width: 64px;
     height:64px;
-  
+    background-color: #ADC0C4;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
     transition: filter 0.2s;
   }
   
@@ -205,7 +182,7 @@
     margin: 40px 0;
   }
   
-  .bet-buttons {
+  .lotteryButtons {
     display: flex;
     justify-content: space-between;
   }
@@ -252,32 +229,27 @@
   }
 
 /** cart **/
-
 .cart-container {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
   width: 320px;
   height: 100%;
   margin-top: 58px;
   border: 1px solid #E2E2E2;
   border-radius: 10px;
-  background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
   
-
-
-
-
-  .cart-container h2 {
-    margin: 20px 0 20px 14px;
+  .cart-container h2 {   
     font-size: 24px;
+    margin: 20px 0 20px 14px;
   }
   
   .cart-container .value {
-    display: flex;
     justify-content: left;
     margin: 0;
+    display: flex;
     padding: 0;
   }
   
@@ -307,73 +279,70 @@
   }
   
   
-  .bet-card {
+  .lotteryCard {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
     margin: 0 auto;
     width: 300px;
     height: 70px;
     margin-top: 30px;
     border-radius: 10px;
-    background-color: #FFFFFF;
-    display: flex;
-    justify-content: flex-start;
+  
   }
   
-  .bet-card img {
+  .lotteryCard img {
     display: inline-block;
     width: 32px;
     margin: 8px;
     cursor: pointer;
   }
   
-  .bet-cart-numbers {
+  .textNumbers {
     color: #868686;
     font-weight: bold;
     font-style: italic;
     margin-bottom: 8px;
   }
   
-  .bet-price {
+  .textPrice {
     color: #868686;
     font-style: normal;
   }
   
-  .bet-name {
+  .textName {
     font-weight: bold;
     margin-right: 20px;
   }
   
-  .bet-interior {
+  .backgroundNumber {
+    justify-content: center;
+    padding: 0 10px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 10px;
   }
   
-  .bet-name-price {
+  .containerPrice {
     display: flex;
     justify-content: left;
   }
   
 /** Footer **/
-
 footer {
   display: flex;
   justify-content: center;
-
   height: 50px;
   width: 100%;
-
   margin-top: 110px;
-
   position: relative;
-
   border-top: 2px solid #EBEBEB;
+
 }
 
 footer span {
-  font-size: 16px;
   font-style: normal;
   color: #707070;
+  font-size: 16px;
   margin-top: 12px;
 }
