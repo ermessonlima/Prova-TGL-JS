@@ -26,6 +26,15 @@
       "max-number": 5,
       "color": "#F79C31",
       "min-cart-value": 30
+    },
+    {
+      "type": "Teste",
+      "description": "Escolha 5dsfds números dos 80 disponíveis na quina. 5, 4, 3 ou 2 acertos. São seis sorteios semanais e seis chances de ganhar.",
+      "range": 24,
+      "price": 8,
+      "max-number": 5,
+      "color": "#ff0000",
+      "min-cart-value": 30
     }
   ]
 }

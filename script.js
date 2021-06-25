@@ -1,6 +1,10 @@
+//Inicio da função IIFE
 (function ($) {
+
+  //Evitar uso de variaveis não declaradas
   'use strict';
 
+  //Seleciona elementos do html
   let $type = document.querySelector('[data-js="type"]');
   let $ranger = document.querySelector('[data-js="numbers"]');
   let $totalCart = document.querySelector('[data-js="totalCart"]');
@@ -13,19 +17,24 @@
   let $completeNumber = document.querySelector('[data-js="completeNumber"]');
 
   const lottery = (function () {
-
+    //Jogos
     var games = [];
+    //Tipo do jogo, ex: lotofacil, mega-sena...
     var typeGame = {};
+    //Adicionar id 
     var lotteryId = 0;
+    //Valor dos jogos no carrinho
     var totalCartValue = 0;
+    //Numeros selecionados
     var checkedNumbers = [];
+    //Numeros do carrinho
     var numbersLottery = [];
 
     return {
       init: function () {
         this.ajaxRequest();
       },
-
+      // Requisição Ajax
       ajaxRequest: function () {
         const ajax = new XMLHttpRequest();
         ajax.open('GET', '../games.json');
@@ -33,6 +42,7 @@
         ajax.addEventListener('readystatechange', () => lottery.getTypesLottery(ajax));
       },
 
+      //Add jogos do arquivo JSON no array games
       getTypesLottery: function (parm) {
         if (parm.readyState === 4 && parm.status === 200) {
           games = JSON.parse(parm.responseText).types;
@@ -41,27 +51,45 @@
         };
       },
 
+      //Cria botoes para escolha do tipo do jogo
       createButtons: function () {
         games.forEach(game => {
+          console.log(game)
           $typeButton.insertAdjacentHTML(
-            'beforeend', '<button class="lottery-buttons" data-js="'+ game.type+'">'+ game.type +' </button>'
+            'beforeend', '<button class="lottery-buttons" data-js="' + game.type + '">' + game.type + ' </button>'
           );
         });
         lottery.changeButtonChecked();
         lottery.getDescriptionType(lottery.checkedButtonColor(0));
       },
 
+      //Carregar primeiro jogo (ex.: Lotofacil)
       getDescriptionType: function () {
         lottery.loadGame(lottery.getDescriptionTypeLottery(games[0].type)[0]);
       },
 
+
+      //Carrega jogos
+      loadGame: function (type) {
+        lottery.clearBet();
+        checkedNumbers = [];
+        Object.assign(typeGame, type);
+        lottery.completeNumbersForType(type);
+        lottery.handleBetNumbers(type);
+        $description.innerText = type.description;
+        $type.innerText = type.type.toUpperCase();
+      },
+
+      //Pegar descrição do jogo 
       getDescriptionTypeLottery: function (type) {
         return games.filter(game => {
           return game.type === type;
         })
       },
 
+
       changeButtonChecked: function () {
+       
         $typeButton.childNodes.forEach((button, index) => {
           button.addEventListener('click', () => {
             const type = lottery.getDescriptionTypeLottery(button.dataset.js)[0];
@@ -76,32 +104,16 @@
           const game = lottery.getDescriptionTypeLottery(button.dataset.js)[0];
           if (currentIndex === index) {
             button.setAttribute(
-              'style', 'background-color: '+game.color+'; color: #FFFFFF; border: 2px solid '+game.color +';' )
+              'style', 'background-color: ' + game.color + '; color: #FFFFFF; border: 2px solid ' + game.color + ';')
           } else {
-            button.setAttribute('style', 'background-color: #FFFFFF; color:' + game.color +';  border: 2px solid' + game.color +';');
+            button.setAttribute('style', 'background-color: #FFFFFF; color:' + game.color + ';  border: 2px solid' + game.color + ';');
           }
         })
       },
 
-      loadGame: function (type) {
-        lottery.clearBet();
-        checkedNumbers = [];
-        Object.assign(typeGame, type);
-        lottery.completeNumbers(type);
-        lottery.handleBetNumbers(type);
-        $description.innerText = type.description;
-        $type.innerText = type.type.toUpperCase();
-      },
-
-      completeNumbers: function (type) {
-        for (var index = 1; index <= type.range; index++) {
-          $ranger.insertAdjacentHTML(
-            'beforeend', `<button class="number" data-js="${index}" value="${index}"> ${index}  </button>`
-          );
-        }
-      },
-
+      //Limpar o jogo ao mudar de opção
       clearBet: function () {
+        console.log('oi')
         $ranger.innerHTML = '';
       },
 
@@ -122,6 +134,7 @@
         })
       },
 
+      //Adicionar evento de clique e função aos botoes
       buttonsLottery: function () {
         $cleanNumbers.addEventListener('click', lottery.cleanNumbers);
         $cartButton.addEventListener('click', lottery.addToCart);
@@ -129,6 +142,7 @@
         $saveButton.addEventListener('click', lottery.saveGame);
       },
 
+      //Limpar numeros
       cleanNumbers: function () {
         checkedNumbers.forEach(number => {
           document.querySelector(`[data-js="${number}"]`)
@@ -137,14 +151,43 @@
         checkedNumbers = [];
       },
 
-      addToCart: function () {
-        if (checkedNumbers.length == typeGame['max-number']) {
-          lottery.createBet();
-          lotteryId += 1;
-          lottery.cleanNumbers();
+      //Carregar numeros pela ranger
+      completeNumbersForType: function (type) {
+        for (var index = 1; index <= type.range; index++) {
+          $ranger.insertAdjacentHTML(
+            'beforeend', `<button class="number" data-js="${index}" value="${index}"> ${index}  </button>`
+          );
         }
       },
 
+
+    //Completar numeros 
+      completeNumber: function () {
+
+    
+          checkedNumbers.forEach(number => {
+            document.querySelector(`[data-js="${number}"]`)
+              .setAttribute('style', 'background-color: #ADC0C4;')
+          });
+          checkedNumbers = [];
+        
+
+        let randomNumber = 0;
+        while (checkedNumbers.length < typeGame['max-number']) {
+          randomNumber = Math.ceil(Math.random() * (typeGame.range));
+          if (!lottery.isInCurrentBet(randomNumber)) {
+            document.querySelector(`[data-js='${randomNumber}']`).click();
+          }
+        }
+      },
+
+      isInCurrentBet: function (number) {
+        return checkedNumbers.some(item => {
+          return number === item;
+        })
+      },
+
+      //Criar jogo no carrinho
       createBet: function () {
         $numbersLottery.insertAdjacentHTML('beforeend',
           `<div class="lotteryCard" data-id="${lotteryId}" data-js="bet${typeGame.type}">
@@ -170,16 +213,16 @@
         lottery.removeBetFromCart();
       },
 
-      completeNumber: function () {
-        let randomNumber = 0;
-        while (checkedNumbers.length < typeGame['max-number']) {
-          randomNumber = Math.ceil(Math.random() * (typeGame.range));
-          if (!lottery.isInCurrentBet(randomNumber)) {
-            document.querySelector(`[data-js='${randomNumber}']`).click();
-          }
+      //Add item no carrinho
+      addToCart: function () {
+        if (checkedNumbers.length == typeGame['max-number']) {
+          lottery.createBet();
+          lotteryId += 1;
+          lottery.cleanNumbers();
         }
       },
 
+      //Remover item do carrinho
       removeBetFromCart: function () {
         const betToBeRemoved = document.querySelector(`[data-id="${lotteryId}"]`);
 
@@ -197,16 +240,10 @@
         })
       },
 
+      // Remover . e adicionar ,
       changeTotalValue: function () {
         $totalCart.textContent = String(totalCartValue.toFixed(2)).replace('.', ',');
       },
-
-      isInCurrentBet: function (number) {
-        return checkedNumbers.some(item => {
-          return number === item;
-        })
-      }
-
     }
 
   }());
