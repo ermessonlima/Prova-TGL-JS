@@ -49,15 +49,15 @@
     });
     changeButtonChecked();
 
-    addFirstAccessData(checkedButtonColor(0));
+    getDescriptionType(checkedButtonColor(0));
   }
 
 
-  function addFirstAccessData() {
-    loadGame(getBetDescription(games[0].type)[0]);
+  function getDescriptionType() {
+    loadGame(getDescriptionTypeLottery(games[0].type)[0]);
   }
 
-  function getBetDescription(type) {
+  function getDescriptionTypeLottery(type) {
     return games.filter(game => {
       return game.type === type;
     })
@@ -66,7 +66,7 @@
   function changeButtonChecked() {
     $typeButton.childNodes.forEach((button, index) => {
       button.addEventListener('click', () => {
-        const type = getBetDescription(button.dataset.js)[0];
+        const type = getDescriptionTypeLottery(button.dataset.js)[0];
         loadGame(type);
         checkedButtonColor(index);
       });
@@ -75,7 +75,7 @@
 
   function checkedButtonColor(index) {
     $typeButton.childNodes.forEach((button, currentIndex) => {
-      const game = getBetDescription(button.dataset.js)[0];
+      const game = getDescriptionTypeLottery(button.dataset.js)[0];
 
       if (currentIndex === index) {
         button.setAttribute(
